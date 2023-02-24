@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019421128589",
+    "project_id": "farm-solve",
+    "storage_bucket": "farm-solve.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019421128589:android:89d0b28a8e72a1c11f6fc4",
+        "android_client_info": {
+          "package_name": "com.example.farm_solve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019421128589-96itilvb1f5lmgqnrasdj2nbf0580940.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB215fqlaOybsnS1QdOYZU-j8LeQl8rbrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019421128589-96itilvb1f5lmgqnrasdj2nbf0580940.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

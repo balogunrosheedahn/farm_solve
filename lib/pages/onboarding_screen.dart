@@ -12,23 +12,23 @@ class onboardingScreen extends StatelessWidget {
         children: [
           //logo
           Padding(
-            padding: const EdgeInsets.only(left: 80, right: 80, bottom: 40, top: 160 ),
-            child: Image.asset("assets/images/eggs.jpg"),
+            padding: const EdgeInsets.only(left: 30, right: 30, bottom: 20, top: 80 ),
+            child: Image.asset("lib/images/farmgirl.png"),
           ),
          //We deliver fresh farm produce at your doorstep
            Padding(
             padding: const EdgeInsets.all(24.0),
-            child: Text("We deliver fresh farm produce at your doorstep",
+            child: Text("Welcome to FarmSolve",
             textAlign: TextAlign.center,
             style: GoogleFonts.raleway(
               fontWeight: FontWeight.bold,
-              fontSize: 40,
+              fontSize: 32,
             )),
           ),
-          const SizedBox(height: 24,),
+          const SizedBox(height: 12,),
           //Bridging the farmer's and consumer
-          Text("Bridging the farmer's and consumer",
-            style: TextStyle(color: Colors.grey.shade500),
+          Text("Buy and Sell fresh farm produce with ease, \n ranging from fresh to livestock.",
+            textAlign: TextAlign.center, style: GoogleFonts.raleway(color: Colors.grey.shade800),
           ),
           const Spacer(),
           //get started button
@@ -44,8 +44,8 @@ class onboardingScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12)
                 ),
                 padding: const EdgeInsets.all(24.0),
-                child: const Text("Get Started",
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),),
+                child:  Text("Get Started",
+                  style: GoogleFonts.raleway(color: Colors.white, fontSize: 18.0),),
               ),
           ),
           const Spacer(),
