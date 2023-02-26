@@ -22,6 +22,8 @@ class HomePageState extends State<HomePage> {
 
 
   List<String> _carouselImages =[];
+  List _products = [];
+  var _firestoreInstance = FirebaseFirestore.instance;
   var _dotPosition = 0;
   TextEditingController textController = TextEditingController();
 
@@ -42,9 +44,32 @@ class HomePageState extends State<HomePage> {
     return qn.docs;
   }
 
+  fetchProducts() async {
+
+    QuerySnapshot qn =
+    await _firestoreInstance.collection("products").get();
+    setState(() {
+      for (int i = 0; i < qn.docs.length; i++) {
+        _products.add(
+            {
+              "product-name": qn.docs[i]["product-name"],
+              "product-description": qn.docs[i]["product-description"],
+              "price": qn.docs[i]["price"],
+              "product-img": qn.docs[i]["product-img"],
+              "quantity": qn.docs [i]["quantity"],
+            }
+        );
+
+      }
+    });
+
+    return qn.docs;
+  }
+
   @override
   void initState() {
     fetchCarouselImages();
+    fetchProducts();
     super.initState();
   }
 
@@ -137,16 +162,39 @@ class HomePageState extends State<HomePage> {
               size: Size(6,6),
             ),
             ),
-            //Padding(
-              //padding: const EdgeInsets.all(24.0),
-              //child: ClipRRect(
-                //borderRadius: BorderRadius.circular(10.0),
-               // child: Image.asset("lib/images/produce.jpg")
 
-            //  ),
-          //  ),
-            //image container
+
             //Available products items+ row grid
+          SizedBox(
+            height: 15,
+          ),
+           Expanded(
+              child: SizedBox(
+                height: 150,
+                width: 100,
+                child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: _products.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 1),
+                    itemBuilder: (_,index){
+                      return Card(
+                        elevation: 3,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            //AspectRatio(aspectRatio: 2,child: Container(
+                              //  color: Colors.yellow,
+                            //  child:)),
+                            Image.network(_products[index]["product-img"][0],),
+                            Text("${_products[index]["product-name"]}"),
+                            Text("${_products[index]["price"].toString()}"),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+            ),
           ],
         ),
       ),
