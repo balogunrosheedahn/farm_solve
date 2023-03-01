@@ -1,9 +1,19 @@
+import 'dart:async';
+
 import 'package:farm_solve/pages/home_page.dart';
+import 'package:farm_solve/pages/reg_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class onboardingScreen extends StatelessWidget {
-  const onboardingScreen({Key? key}) : super(key: key);
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({Key? key}) : super(key: key);
+
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +45,7 @@ class onboardingScreen extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(
                 builder: (context){
-            return HomePage();
+            return SignUp();
                 }
                 )),
               child: Container(
