@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:farm_solve/pages/cart_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -22,19 +23,36 @@ class _ProductItemState extends State<ProductItem> {
     _product = widget._product;
   }
 
+  void addToCart() {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    var currentUser = _auth.currentUser;
+    CollectionReference _collectionRef = FirebaseFirestore.instance.collection("users-cart-items");
+    _collectionRef.doc(currentUser!.email).collection("items").doc().set(
+        {
+          "name": _product["product-name"],
+          "price": _product["price"],
+          "images": _product["product-img"],
+          "quantity": _product["quantity"],
+        }).then((value) {
+      Fluttertoast.showToast(
+          msg: "Added to Cart",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.green[600],
+          textColor: Colors.white,
+          fontSize: 16.0);
+    }).catchError((error) {
+      Fluttertoast.showToast(
+          msg: "Failed to add item to cart. Please try again later.",
+          backgroundColor: Colors.red,
+          textColor: Colors.white);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    Future addToCart()async{
-      final FirebaseAuth _auth = FirebaseAuth.instance;
-      var currentUser = _auth.currentUser;
-      CollectionReference _collectionRef = FirebaseFirestore.instance.collection("users-cart-items");
-      return _collectionRef.doc(currentUser!.email).collection("items").doc().set(
-          {
-            "name":widget._product["product-name"],
-            "price":widget._product["price"],
-            "images":widget._product["product-img"],
-          }).then((value) => print("Added to cart"));
-    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,

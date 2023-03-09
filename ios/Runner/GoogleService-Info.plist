@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1019421128589-mehabh02dblu0liav2v57djhjuvfdtcm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1019421128589-mehabh02dblu0liav2v57djhjuvfdtcm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1019421128589-7btqft3sd44vcr9j08g3hjjud4b7017p.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCe5qjpp2TgyMSq0Py00q0uh7MuOBGWnqM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1019421128589</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.farmSolve</string>
+	<key>PROJECT_ID</key>
+	<string>farm-solve</string>
+	<key>STORAGE_BUCKET</key>
+	<string>farm-solve.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1019421128589:ios:72f5db2096afcada1f6fc4</string>
+</dict>
+</plist>

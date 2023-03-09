@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:farm_solve/pages/home_page.dart';
 import 'package:farm_solve/pages/reg_page.dart';
+import 'package:farm_solve/pages/signup_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
          //We deliver fresh farm produce at your doorstep
            Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(16.0),
             child: Text("Welcome to FarmSolve",
             textAlign: TextAlign.center,
             style: GoogleFonts.raleway(
@@ -40,7 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Text("Buy and Sell fresh farm produce with ease, \n ranging from fresh to livestock.",
             textAlign: TextAlign.center, style: GoogleFonts.raleway(color: Colors.grey.shade800),
           ),
-          const Spacer(),
+          const SizedBox(height: 50,),
           //get started button
           GestureDetector(
             onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(
