@@ -206,11 +206,12 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
         ),
+
         SizedBox(height: 30),
         TextButton(onPressed: () => Navigator.push(context,
           MaterialPageRoute(builder: (_) => SignIn()),),
             child: Text("Already Have an Account? Sign In",
-              style: GoogleFonts.raleway(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),))
+              style: GoogleFonts.raleway(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),)),
       ]
       ),
 

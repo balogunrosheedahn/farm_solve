@@ -5,6 +5,7 @@ import 'package:farm_solve/data/app_colors.dart';
 import 'package:farm_solve/items/product_item.dart';
 import 'package:farm_solve/pages/cart_page.dart';
 import 'package:farm_solve/pages/category_page.dart';
+import 'package:farm_solve/pages/notification_page.dart';
 import 'package:farm_solve/pages/profile_page.dart';
 import 'package:farm_solve/pages/search_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -155,23 +156,26 @@ class HomeState extends State<Home> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                        ),
-                        child: Badge(
-                          badgeContent: Text(
-                            "3",
-                            style: TextStyle(color: Colors.white),
+                      child: GestureDetector(
+                        onTap: () => NotificationPage(),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
                           ),
-                          child: InkWell(
-                            onTap: () {},
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Icon(
-                                Icons.notification_important,
-                                size: 24,
-                                color: Colors.green,
+                          child: Badge(
+                            badgeContent: Text(
+                              "3",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            child: GestureDetector(
+                              onTap: () => NotificationPage(),
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Icon(
+                                  Icons.notification_important,
+                                  size: 24,
+                                  color: Colors.green,
+                                ),
                               ),
                             ),
                           ),

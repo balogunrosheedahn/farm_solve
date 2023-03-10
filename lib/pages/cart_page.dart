@@ -57,11 +57,11 @@ class CartPage extends StatelessWidget {
                         style: TextStyle(color: Colors.grey),
                       ),
                       SizedBox(height: 5),
-                      Text(
-                        "Total: \₦ $total",
-                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.yellowAccent.shade700),
-                      ),
-                    ],
+                      // Text(
+                      //   "Total: \₦ $total",
+                      //   style: TextStyle(fontWeight: FontWeight.bold, color: Colors.yellowAccent.shade700),
+                      // ),
+                     ],
                   ),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -88,7 +88,8 @@ class CartPage extends StatelessWidget {
                                 .doc(FirebaseAuth.instance.currentUser!.email!)
                                 .collection("items")
                                 .doc(documentSnapshot.id)
-                                .update({'quantity': quantity - 1});
+                                .update({'quantity': quantity - 1,
+                              'price': price -price });
                           }
                         },
                       ),
@@ -115,7 +116,8 @@ class CartPage extends StatelessWidget {
                               .doc(FirebaseAuth.instance.currentUser!.email!)
                               .collection("items")
                               .doc(documentSnapshot.id)
-                              .update({'quantity': quantity + 1});
+                              .update({'quantity': quantity + 1, 'price': price * (quantity + 1)});//,{'price': price * (quantity + 1)});
+                              // .update({'price': price * (quantity + 1)});
                         },
                       ),
                     ],
@@ -124,26 +126,26 @@ class CartPage extends StatelessWidget {
               );
             }).toList();
 
-            double total = snapshot.data!.docs.fold(
-              0,
-                  (previousValue, element) =>
-              previousValue +
-                  (element['quantity'] ?? 1) *
-                      (element['price'] ?? 0),
-            );
+            //double total = snapshot.data!.docs.fold(
+             // 0,
+               //   (previousValue, element) =>
+              //previousValue +
+               //   (element['quantity'] ?? 1) *
+              //        (element['price'] ?? 0),
+           // );
 
-            itemsList.add(
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Total: \₦ $total',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            );
+            //itemsList.add(
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Text(
+              //     'Total: \₦ $total',
+              //     style: TextStyle(
+              //       fontWeight: FontWeight.bold,
+              //       fontSize: 18,
+              //     ),
+              //   ),
+              // ),
+            // );
 
             return ListView(
               children: itemsList,
