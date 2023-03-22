@@ -4,13 +4,12 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Farm Solve is a mobile application e-commerce platform that serves as a ready market, connecting farmers and consumers to facilitate distribution and sales of farm produce.
 
-A few resources to get you started if this is your first Flutter project:
+ FarmSolve mobile application created as a one-stop market that allows;
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Farmers create accounts, get verified, upload their products with detailed product description (name, quantity, price), receive and process orders.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Consumers create accounts, get verified, browse products, choose products and add to cart, make payment, add delivery details and receive purchase delivery.
+
+-The development phase involves building the solution using Flutter technology, Firebase for Database as well as integrating other relevant technologies and services. 
